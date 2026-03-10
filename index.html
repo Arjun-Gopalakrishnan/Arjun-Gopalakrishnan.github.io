@@ -3,171 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun Gopalakrishnan | Data Analytics Portfolio</title>
+    <title>Arjun Gopalakrishnan | Data Analytics & Finance</title>
     <style>
         :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #4cc9f0;
+            --primary: #3d0052; /* Premier League Purple */
+            --secondary: #00ff87; /* Premier League Green */
+            --dark: #1a1a2e;
             --text: #333;
-            --light: #f5f7fb;
+            --light: #f8f9fa;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             background: var(--light);
             color: var(--text);
             line-height: 1.6;
         }
 
-        /* Modern Header with Gradient */
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), 
+                        url('https://th.bing.com/th/id/OIG1.fGz2fKzH_W5S2lU_N9z6?pid=ImgGn');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            letter-spacing: 1px;
-        }
+        header h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.4rem; font-weight: 300; color: var(--secondary); }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        /* Sticky Navigation */
+        /* Navigation */
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            text-align: center;
+            background: var(--primary);
             padding: 15px;
-            background: var(--secondary);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         nav a {
             color: white;
-            margin: 0 20px;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent);
-        }
+        nav a:hover { color: var(--secondary); }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
 
         .section h2 {
+            font-size: 2.2rem;
             color: var(--primary);
-            font-size: 2rem;
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
-            margin-bottom: 30px;
+            border-bottom: 4px solid var(--secondary);
+            display: inline-block;
+            margin-bottom: 40px;
         }
 
-        /* Enhanced Project Cards */
+        /* Project Cards */
         .project-card {
             background: white;
-            padding: 30px;
-            margin-top: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            margin-top: 0;
-            color: var(--secondary);
-        }
-
-        .tech {
-            margin: 20px 0;
-        }
-
-        .tech span {
-            background: #eef2f7;
-            color: var(--secondary);
-            padding: 8px 16px;
+            padding: 40px;
+            margin-bottom: 30px;
             border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .project-card:hover { transform: translateY(-10px); }
+
+        .tech-pill {
+            background: #f0f2f6;
+            color: var(--primary);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
             margin-right: 8px;
             display: inline-block;
-            margin-bottom: 10px;
         }
 
-        /* Modern Button Styling */
+        /* Button */
         .button {
             display: inline-block;
-            padding: 12px 28px;
-            background: var(--accent);
-            color: #fff;
+            padding: 14px 30px;
+            background: var(--primary);
+            color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(76, 201, 240, 0.3);
+            font-weight: 700;
+            margin-top: 20px;
+            transition: 0.3s;
+            border: 2px solid var(--primary);
         }
 
         .button:hover {
-            background: var(--secondary);
-            transform: scale(1.05);
-            color: white;
+            background: transparent;
+            color: var(--primary);
         }
 
-        /* Skills List Grid */
+        .button.alt {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            list-style: none;
-            padding: 0;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
         }
 
-        .skills-grid li {
+        .skill-item {
             background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 20px;
+            border-radius: 15px;
             text-align: center;
-            font-weight: 600;
-            border-bottom: 3px solid var(--accent);
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
         }
 
         footer {
-            background: var(--primary);
+            background: var(--dark);
             color: white;
             text-align: center;
-            padding: 40px;
-            margin-top: 50px;
+            padding: 60px 20px;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            nav a { margin: 0 10px; font-size: 14px; }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -175,12 +150,13 @@
 
 <header>
     <h1>Arjun Gopalakrishnan</h1>
-    <p>Data Analytics Professional | Accounting Expertise | Python & SQL</p>
+    <p>Financial Auditor ➔ Data Analytics Professional</p>
 </header>
 
 <nav>
     <a href="#about">About</a>
-    <a href="#projects">Projects</a>
+    <a href="#projects">Data Projects</a>
+    <a href="#photography">Photography</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -189,73 +165,72 @@
 
     <section id="about" class="section">
         <h2>About Me</h2>
-        <p>
-            I am a <strong>B.Com graduate</strong> with over 1.5 years of professional experience in accounting and finance. 
-            I am currently bridging the gap between traditional finance and modern data science by developing advanced skills in 
-            <strong>Python, SQL, and Machine Learning</strong>. My unique perspective allows me to deliver 
-            data-driven insights that are grounded in real-world business value.
+        <p style="font-size: 1.2rem; color: #555;">
+            Based in <strong>Kochi, Kerala</strong>, I leverage over <strong>1.5 years of Accounting experience</strong> 
+            to build data solutions that actually matter. I don't just find patterns; I find 
+            financial value. Currently specializing in Python and Machine Learning to bridge the gap between 
+            complex numbers and clear business decisions.
         </p>
     </section>
 
     <section id="projects" class="section">
-        <h2>Featured Projects</h2>
+        <h2>Featured Data Projects</h2>
 
         <div class="project-card">
-            <h3>Premier League Elite Valuation Tool</h3>
-            <p>
-                An end-to-end Machine Learning web application designed to predict player market values and perform financial ROI audits. 
-                This project features a live interactive dashboard with automated scouting inputs and real-time valuation results.
-            </p>
-            <div class="tech">
-                <span>Python</span> <span>Streamlit</span> <span>Scikit-Learn</span> <span>Pandas</span>
+            <span style="color: var(--primary); font-weight: bold;">LIVE WEB APP</span>
+            <h3 style="font-size: 1.8rem; margin: 10px 0;">Premier League Elite Valuation Tool</h3>
+            <p>A full-stack ML application that predicts football player market values using a Linear Regression model. It includes a custom financial ROI audit feature to help scouts identify undervalued assets.</p>
+            <div style="margin: 20px 0;">
+                <span class="tech-pill">Python</span> <span class="tech-pill">Scikit-Learn</span> 
+                <span class="tech-pill">Streamlit Cloud</span> <span class="tech-pill">Pandas</span>
             </div>
-            <a class="button" href="https://premier-league-valuation-app.streamlit.app/" target="_blank">
-                Launch Live App
+            <a class="button alt" href="https://premier-league-valuation-app-it2qqnznzqpqhe2m6ressy.streamlit.app/" target="_blank">
+                Launch Live App 🚀
             </a>
         </div>
 
         <div class="project-card">
-            <h3>Financial & Retail Analysis Dashboard</h3>
-            <p>
-                Advanced Excel dashboard utilizing Pivot Tables and dynamic charts to visualize revenue patterns and product performance. 
-                Provides actionable insights into sales trends and financial health for retail environments.
-            </p>
-            <div class="tech">
-                <span>Excel</span> <span>Pivot Tables</span> <span>Data Visualization</span>
+            <h3>YouTube View Count Predictor</h3>
+            <p>Developed a machine learning model to predict video performance based on metadata, helping content creators optimize their strategy through data-driven insights.</p>
+            <div style="margin: 20px 0;">
+                <span class="tech-pill">Regression Analysis</span> <span class="tech-pill">Data Scraping</span> <span class="tech-pill">Matplotlib</span>
             </div>
-            <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank">
-                View Project Details
-            </a>
+            <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank">View Case Study</a>
         </div>
+    </section>
+
+    <section id="photography" class="section">
+        <h2>Cinematic Photography</h2>
+        <p>Beyond data, I explore visual storytelling through cinematic and silhouette photography. I offer professional photo editing services focusing on color grading and atmospheric lighting.</p>
+        <a class="button" href="https://www.fiverr.com/s/your-link-here" target="_blank" style="background: #1dbf73; border-color: #1dbf73;">Visit My Fiverr Studio</a>
     </section>
 
     <section id="skills" class="section">
-        <h2>Core Technical Skills</h2>
-        <ul class="skills-grid">
-            <li>Python (Pandas, NumPy)</li>
-            <li>SQL (Data Extraction)</li>
-            <li>Machine Learning (Regression)</li>
-            <li>Excel & Power BI</li>
-            <li>Financial Auditing</li>
-            <li>Web Scraping (Scrapy)</li>
-        </ul>
+        <h2>Core Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Financial Auditing</div>
+            <div class="skill-item">Python Programming</div>
+            <div class="skill-item">SQL Database</div>
+            <div class="skill-item">Power BI / Excel</div>
+            <div class="skill-item">Machine Learning</div>
+            <div class="skill-item">Web Scraping</div>
+        </div>
     </section>
 
     <section id="contact" class="section">
-        <h2>Contact & Connect</h2>
-        <p>Currently seeking Data Analyst or Financial Analyst opportunities in <strong>Kochi, Kerala</strong>.</p>
-        <p>📧 Email: <a href="mailto:arjungopz344@gmail.com" style="color: var(--secondary);">arjungopz344@gmail.com</a></p>
-        
-        <div style="margin-top: 20px;">
-            <a class="button" href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" style="background:#0077b5;">LinkedIn Profile</a>
-            <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank" style="background:#333; margin-left: 10px;">GitHub Portfolio</a>
+        <h2>Let's Connect</h2>
+        <p>Open for Data Analytics or Financial Auditor roles in <strong>Kochi</strong> or Remote.</p>
+        <div style="margin-top: 30px;">
+            <a class="button" href="mailto:arjungopz344@gmail.com">arjungopz344@gmail.com</a>
+            <a class="button" href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" style="background:#0077b5; border-color:#0077b5; margin-left: 10px;">LinkedIn</a>
         </div>
     </section>
 
 </div>
 
 <footer>
-    <p>© 2026 Arjun Gopalakrishnan | Powered by Data & Passion</p>
+    <p>© 2026 Arjun Gopalakrishnan | Crafted with Data in Kerala</p>
+    <p style="font-size: 12px; opacity: 0.6;">B.Com Graduate | Mahatma Gandhi University</p>
 </footer>
 
 </body>
