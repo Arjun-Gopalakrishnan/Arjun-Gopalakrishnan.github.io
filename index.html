@@ -11,6 +11,7 @@
             --dark: #1a1a2e;
             --text: #333;
             --light: #f8f9fa;
+            --fiverr: #1dbf73;
         }
 
         body {
@@ -27,7 +28,7 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 20px;
+            padding: 100px 20px;
             text-align: center;
         }
 
@@ -66,6 +67,32 @@
             margin-bottom: 40px;
         }
 
+        /* About Section Layout */
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 5px solid white;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
         .project-card {
             background: white;
             padding: 40px;
@@ -78,6 +105,14 @@
 
         .project-card:hover { transform: translateY(-10px); }
 
+        .status-tag {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 10px;
+            color: #777;
+            font-style: italic;
+        }
+
         .tech-pill {
             background: #f0f2f6;
             color: var(--primary);
@@ -87,19 +122,21 @@
             font-weight: 700;
             margin-right: 8px;
             display: inline-block;
+            margin-bottom: 5px;
         }
 
         .button {
             display: inline-block;
-            padding: 14px 30px;
+            padding: 12px 25px;
             background: var(--primary);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            margin-top: 20px;
+            margin-top: 15px;
             transition: 0.3s;
             border: 2px solid var(--primary);
+            font-size: 14px;
         }
 
         .button:hover {
@@ -111,6 +148,16 @@
             background: var(--secondary);
             border-color: var(--secondary);
             color: var(--primary);
+        }
+
+        .button.fiverr-btn {
+            background: var(--fiverr);
+            border-color: var(--fiverr);
+        }
+
+        .button.fiverr-btn:hover {
+            background: transparent;
+            color: var(--fiverr);
         }
 
         .skills-grid {
@@ -138,6 +185,7 @@
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
+            .about-flex { text-align: center; }
         }
     </style>
 </head>
@@ -150,73 +198,104 @@
 
 <nav>
     <a href="#about">About</a>
-    <a href="#projects">Data Projects</a>
-    <a href="#photography">Photography</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#projects">Portfolio</a>
+    <a href="#skills">Expertise</a>
+    <a href="#contact">Connect</a>
 </nav>
 
 <div class="container">
 
     <section id="about" class="section">
-        <h2>About Me</h2>
-        <p style="font-size: 1.2rem; color: #555;">
-            Based in <strong>Kochi, Kerala</strong>, I leverage over <strong>1.5 years of Accounting experience</strong> 
-            to build data solutions that actually matter. Currently bridging the gap between 
-            financial auditing and modern Data Science.
-        </p>
+        <div class="about-flex">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/400x400" alt="Arjun Gopalakrishnan">
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p style="font-size: 1.1rem; color: #555;">
+                    I'm based in <strong>Kochi, Kerala</strong>, with a background in accounting and auditing. 
+                    I have <strong>1.5 years of experience</strong> working with financial data and business processes.
+                </p>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Recently, I’ve been focusing on building skills in <strong>Data Analytics and Machine Learning</strong> 
+                    through hands-on projects like dashboards, prediction models, and web-based applications.
+                </p>
+                <p style="font-size: 1.1rem; color: #555;">
+                    My goal is simple — to move into a <strong>Data Analyst role</strong> where I can apply both 
+                    my finance knowledge and technical skills to solve real-world problems.
+                </p>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="section">
         <h2>Featured Data Projects</h2>
 
         <div class="project-card">
-            <span style="color: var(--primary); font-weight: bold;">LIVE WEB APP</span>
+            <span style="color: var(--primary); font-weight: bold;">LIVE STREAMLIT APP</span>
             <h3 style="font-size: 1.8rem; margin: 10px 0;">Premier League Elite Valuation Tool</h3>
             <p>A machine learning tool that predicts football player market values and calculates financial ROI audits for recruitment scouts.</p>
-            <div style="margin: 20px 0;">
+            <div style="margin: 15px 0;">
                 <span class="tech-pill">Python</span> <span class="tech-pill">Scikit-Learn</span> 
-                <span class="tech-pill">Streamlit</span> <span class="tech-pill">Finance</span>
+                <span class="tech-pill">Streamlit</span> <span class="tech-pill">Football Analytics</span>
             </div>
-            <a class="button alt" href="https://premier-league-valuation-app-it2qqnznzqpqhe2m6ressy.streamlit.app/" target="_blank">
-                Launch Live App 🚀
-            </a>
+            <a class="button alt" href="https://premier-league-valuation-app-it2qqnznzqpqhe2m6ressy.streamlit.app/" target="_blank">Launch App 🚀</a>
+            <span class="status-tag">Note: If the link is "sleeping," click 'Wake Up' and wait 30 seconds.</span>
         </div>
 
         <div class="project-card">
-            <h3>YouTube View Count Predictor</h3>
-            <p>ML model using metadata to predict video performance and engagement levels for creators.</p>
-            <div style="margin: 20px 0;">
-                <span class="tech-pill">Regression</span> <span class="tech-pill">Data Scraping</span> <span class="tech-pill">Pandas</span>
+            <span style="color: #ff0000; font-weight: bold;">LIVE FLASK APP</span>
+            <h3 style="font-size: 1.8rem; margin: 10px 0;">YouTube View Count Predictor</h3>
+            <p>ML project using XGBoost to predict video performance for Malayalam Tech YouTubers. Includes an integrated Tableau dashboard.</p>
+            <div style="margin: 15px 0;">
+                <span class="tech-pill">XGBoost</span> <span class="tech-pill">Flask</span> 
+                <span class="tech-pill">Tableau</span> <span class="tech-pill">Render</span>
             </div>
-            <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank">View GitHub Repo</a>
+            <a class="button alt" href="https://youtube-predictor-final.onrender.com" target="_blank">Launch App 📺</a>
+            <a class="button" href="https://github.com/Arjun-Gopalakrishnan/Youtube-Predictor-Final" target="_blank" style="margin-left:10px;">GitHub Repo</a>
+        </div>
+
+        <div class="project-card">
+            <span style="color: #2ecc71; font-weight: bold;">E-COMMERCE ML</span>
+            <h3 style="font-size: 1.8rem; margin: 10px 0;">Demand Forecasting & Inventory Optimization</h3>
+            <p>Built a Random Forest Regressor on 128k+ Amazon sales records to optimize monthly product demand planning.</p>
+            <div style="margin: 15px 0;">
+                <span class="tech-pill">Random Forest</span> <span class="tech-pill">Inventory Management</span> 
+                <span class="tech-pill">MAPE: 3.45%</span> <span class="tech-pill">Flask</span>
+            </div>
+            <a class="button alt" href="https://stockproject-4-tng7.onrender.com/" target="_blank">Launch App 📦</a>
+            <a class="button" href="https://github.com/Arjun-Gopalakrishnan/stockproject" target="_blank" style="margin-left:10px;">GitHub Repo</a>
         </div>
     </section>
 
     <section id="photography" class="section">
         <h2>Cinematic Photography</h2>
-        <p>Expert cinematic photo editing focusing on color grading and atmospheric lighting.</p>
-        <a class="button" href="https://www.fiverr.com/s/your-link-here" target="_blank" style="background: #1dbf73; border-color: #1dbf73;">Visit My Fiverr Studio</a>
+        <div class="project-card">
+            <p>Beyond data, I am passionate about cinematic visual storytelling. I specialize in cinematic photo editing, focusing on color grading and atmospheric lighting to create professional, mood-driven visuals.</p>
+            <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank">Visit My Fiverr Studio 📸</a>
+        </div>
     </section>
 
     <section id="skills" class="section">
         <h2>Core Expertise</h2>
         <div class="skills-grid">
             <div class="skill-item">Financial Auditing</div>
-            <div class="skill-item">Python Programming</div>
-            <div class="skill-item">SQL Database</div>
-            <div class="skill-item">Power BI / Excel</div>
-            <div class="skill-item">Machine Learning</div>
+            <div class="skill-item">Python (XGBoost/RF)</div>
+            <div class="skill-item">SQL & Databases</div>
+            <div class="skill-item">Power BI / Tableau</div>
+            <div class="skill-item">Cinematic Photo Editing</div>
             <div class="skill-item">Web Scraping</div>
         </div>
     </section>
 
     <section id="contact" class="section">
         <h2>Let's Connect</h2>
-        <p>Open for Data Analytics or Financial Auditor roles in <strong>Kochi</strong>.</p>
+        <p>Currently seeking **Data Analyst** or **Financial Auditor** opportunities in Kochi.</p>
         <div style="margin-top: 30px;">
-            <a class="button" href="mailto:arjungopz344@gmail.com">arjungopz344@gmail.com</a>
+            <a class="button" href="mailto:arjungopz344@gmail.com">Email Me</a>
             <a class="button" href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" style="background:#0077b5; border-color:#0077b5; margin-left: 10px;">LinkedIn</a>
+            <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank" style="background:#333; border-color:#333; margin-left: 10px;">GitHub</a>
+            <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank" style="margin-left: 10px;">Fiverr Profile</a>
         </div>
     </section>
 
