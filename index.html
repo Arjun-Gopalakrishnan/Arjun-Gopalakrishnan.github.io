@@ -15,8 +15,10 @@
             --accent-blue: #0284c7;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             margin: 0;
             background: var(--light);
             color: var(--text);
@@ -24,8 +26,8 @@
         }
 
         header {
-            background: linear-gradient(rgba(26, 26, 46, 0.88), rgba(26, 26, 46, 0.88)), 
-                        url('https://th.bing.com/th/id/OIG1.fGz2fKzH_W5S2lU_N9z6?pid=ImgGn');
+            background: linear-gradient(rgba(26, 26, 46, 0.92), rgba(26, 26, 46, 0.92)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -33,27 +35,28 @@
             text-align: center;
         }
 
-        header h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        header p { font-size: 1.4rem; font-weight: 300; color: var(--secondary); margin-top: 0; }
+        header h1 { font-size: 3.2rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
+        header p { font-size: 1.35rem; font-weight: 400; color: var(--secondary); margin-top: 0; }
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: var(--primary);
-            padding: 15px;
+            padding: 14px 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 14px;
             text-decoration: none;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 14px;
-            transition: 0.3s;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: color 0.25s ease;
         }
 
         nav a:hover { color: var(--secondary); }
@@ -65,7 +68,8 @@
             color: var(--primary);
             border-bottom: 4px solid var(--secondary);
             display: inline-block;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            padding-bottom: 4px;
         }
 
         .about-flex {
@@ -78,14 +82,16 @@
 
         .about-image {
             flex: 1;
-            min-width: 280px;
+            min-width: 260px;
+            max-width: 320px;
         }
 
         .about-image img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 5px solid white;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border: 4px solid white;
+            display: block;
         }
 
         .about-text {
@@ -95,54 +101,70 @@
 
         .project-card {
             background: white;
-            padding: 40px;
+            padding: 35px;
             margin-bottom: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            border: 1px solid #eef0f3;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .project-card:hover { transform: translateY(-8px); }
+        .project-card:hover { 
+            transform: translateY(-6px); 
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
 
         .featured-card {
             border: 2px solid var(--secondary);
-            background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbfa 100%);
+            position: relative;
+        }
+
+        .tag-banner {
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            display: inline-block;
+            margin-bottom: 6px;
         }
 
         .status-tag {
             font-size: 0.8rem;
             display: block;
-            margin-top: 10px;
-            color: #777;
+            margin-top: 12px;
+            color: #64748b;
             font-style: italic;
         }
 
         .tech-pill {
-            background: #f0f2f6;
+            background: #f1f5f9;
             color: var(--primary);
-            padding: 6px 15px;
+            padding: 6px 14px;
             border-radius: 50px;
             font-size: 12px;
             font-weight: 700;
-            margin-right: 8px;
-            display: inline-block;
+            margin-right: 6px;
             margin-bottom: 8px;
+            display: inline-block;
+            border: 1px solid #e2e8f0;
         }
 
         .button {
-            display: inline-block;
-            padding: 12px 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 11px 22px;
             background: var(--primary);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            margin-top: 15px;
+            margin-top: 12px;
             margin-right: 8px;
-            transition: 0.3s;
+            transition: all 0.25s ease;
             border: 2px solid var(--primary);
-            font-size: 14px;
+            font-size: 13.5px;
         }
 
         .button:hover {
@@ -153,7 +175,7 @@
         .button.alt {
             background: var(--secondary);
             border-color: var(--secondary);
-            color: var(--primary);
+            color: #0d3822;
         }
 
         .button.alt:hover {
@@ -186,25 +208,39 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
 
         .skill-item {
             background: white;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 22px 18px;
+            border-radius: 16px;
             text-align: center;
             font-weight: 700;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--primary);
+            font-size: 0.95rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f1f5f9;
+            border-top: 4px solid var(--primary);
+            transition: transform 0.2s ease;
         }
+
+        .skill-item:hover { transform: translateY(-4px); }
 
         footer {
             background: var(--dark);
-            color: white;
+            color: #94a3b8;
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer strong { color: white; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            header p { font-size: 1.1rem; }
+            .about-image { max-width: 100%; }
         }
     </style>
 </head>
@@ -228,18 +264,18 @@
     <section id="about" class="section">
         <div class="about-flex">
             <div class="about-image">
-                <img src="https://via.placeholder.com/400x400" alt="Arjun Gopalakrishnan">
+                <img src="https://avatars.githubusercontent.com/u/104523329?v=4" alt="Arjun Gopalakrishnan Profile Photo">
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
-                <p style="font-size: 1.1rem; color: #555;">
-                    I'm based in <strong>Kochi, Kerala</strong>, with an academic foundation in Commerce and professional experience across financial auditing, business processes, and inventory operations.
+                <p style="font-size: 1.05rem; color: #475569;">
+                    I'm based in <strong>Kochi, Kerala</strong>, with an academic foundation in Commerce and hands-on professional background across corporate accounting, financial operations, and SAP inventory reporting.
                 </p>
-                <p style="font-size: 1.1rem; color: #555;">
-                    Over the past few years, I have expanded into <strong>Data Analytics, Machine Learning, and Backend Engineering</strong>, building production-grade predictive models, automated scheduling pipelines, and full-stack web platforms.
+                <p style="font-size: 1.05rem; color: #475569;">
+                    I combine financial acumen with modern analytical engineering: developing production <strong>Machine Learning models, REST APIs, and automated triage pipelines</strong> that bridge core business requirements with scalable code.
                 </p>
-                <p style="font-size: 1.1rem; color: #555;">
-                    My focus centers on combining domain financial literacy with modern data stacks—delivering reproducible analytics, scalable APIs, and intelligent decision systems that solve concrete operational challenges.
+                <p style="font-size: 1.05rem; color: #475569;">
+                    My projects focus on high reliability—from supply-chain demand forecasting to full-stack AI healthcare systems equipped with zero-millisecond fallback architectures.
                 </p>
             </div>
         </div>
@@ -250,18 +286,20 @@
 
         <!-- Featured Project: CareFirst AI Assistant -->
         <div class="project-card featured-card">
-            <span style="color: var(--accent-blue); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">LIVE PRODUCTION SYSTEM • HEALTHCARE AI</span>
-            <h3 style="font-size: 1.8rem; margin: 10px 0;">CareFirst AI Hospital Assistant Platform</h3>
-            <p>An intelligent clinical triage and OPD management application deployed across a decoupled cloud architecture. Features bilingual (English & Malayalam/Manglish) conversational triage for doctor consultation schedules, casualty safety protocols, and automated administrative appointment queue synchronization.</p>
-            <div style="margin: 15px 0;">
+            <span class="tag-banner" style="color: var(--accent-blue);">PRODUCTION APPLICATION • HEALTHCARE NLP</span>
+            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">CareFirst AI Hospital Assistant Platform</h3>
+            <p style="color: #475569;">
+                A full-stack clinical triage and OPD management application built on a decoupled architecture. Features dual-language (English & Malayalam) natural language routing for clinical emergencies, doctor schedules, automated booking confirmation, and an instant-load fallback rendering engine ensuring 0ms time-to-interactive for visitors.
+            </p>
+            <div style="margin: 16px 0;">
                 <span class="tech-pill">FastAPI</span>
                 <span class="tech-pill">Python</span>
                 <span class="tech-pill">SQLAlchemy / SQLite</span>
-                <span class="tech-pill">Conversational NLP</span>
-                <span class="tech-pill">Bilingual (English/Malayalam)</span>
+                <span class="tech-pill">Bilingual NLP (English / Malayalam)</span>
                 <span class="tech-pill">Tailwind CSS</span>
-                <span class="tech-pill">Render</span>
+                <span class="tech-pill">Decoupled Cloud Architecture</span>
                 <span class="tech-pill">GitHub Pages</span>
+                <span class="tech-pill">Render</span>
             </div>
             <div>
                 <a class="button alt" href="https://arjun-gopalakrishnan.github.io/ai-hospital-assistant/" target="_blank">Launch Web App 🏥</a>
@@ -272,10 +310,12 @@
 
         <!-- Project 1: Retail Analytics -->
         <div class="project-card">
-            <span style="color: #3498db; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">RETAIL ANALYTICS ML</span>
-            <h3 style="font-size: 1.8rem; margin: 10px 0;">Customer Segmentation & Churn Analysis</h3>
-            <p>Applied K-Means clustering on 400,000+ retail transactions to identify high-value "Champions" and "At-Risk" segments using RFM metrics. Formulated targeted retention strategies designed to mitigate churn by an estimated 15%.</p>
-            <div style="margin: 15px 0;">
+            <span class="tag-banner" style="color: #0284c7;">RETAIL ANALYTICS & CLUSTERING</span>
+            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Customer Segmentation & Churn Analysis</h3>
+            <p style="color: #475569;">
+                Applied K-Means clustering and RFM (Recency, Frequency, Monetary) analytics on 400,000+ transactional records to categorize high-value, loyal, and at-risk cohorts. Designed actionable retention strategies to reduce customer attrition.
+            </p>
+            <div style="margin: 16px 0;">
                 <span class="tech-pill">Python</span> 
                 <span class="tech-pill">K-Means Clustering</span> 
                 <span class="tech-pill">RFM Analysis</span> 
@@ -289,10 +329,12 @@
 
         <!-- Project 2: Premier League Valuation -->
         <div class="project-card">
-            <span style="color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">LIVE STREAMLIT APP • SPORTS ANALYTICS</span>
-            <h3 style="font-size: 1.8rem; margin: 10px 0;">Premier League Elite Valuation Tool</h3>
-            <p>A sports analytics and machine learning model estimating football player market values and running financial ROI audits for recruitment scouting departments.</p>
-            <div style="margin: 15px 0;">
+            <span class="tag-banner" style="color: var(--primary);">LIVE STREAMLIT APP • SPORTS ANALYTICS</span>
+            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Premier League Elite Valuation Tool</h3>
+            <p style="color: #475569;">
+                An interactive sports analytics engine predicting football player market valuations and auditing scouting ROI using regression techniques on performance statistics.
+            </p>
+            <div style="margin: 16px 0;">
                 <span class="tech-pill">Python</span>
                 <span class="tech-pill">Scikit-Learn</span> 
                 <span class="tech-pill">Streamlit</span>
@@ -302,15 +344,17 @@
             <div>
                 <a class="button alt" href="https://premier-league-valuation-app-it2qqnznzqpqhe2m6ressy.streamlit.app/" target="_blank">Launch App 🚀</a>
             </div>
-            <span class="status-tag">Note: If the instance is sleeping, click 'Wake Up' and allow 30 seconds for container startup.</span>
+            <span class="status-tag">Note: Free cloud instance; waking up from standby takes ~30 seconds.</span>
         </div>
 
         <!-- Project 3: YouTube Predictor -->
         <div class="project-card">
-            <span style="color: #e11d48; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">LIVE FLASK APP • PREDICTIVE MODELING</span>
-            <h3 style="font-size: 1.8rem; margin: 10px 0;">YouTube View Count Predictor</h3>
-            <p>End-to-end machine learning system utilizing XGBoost to forecast video audience reach and engagement metrics for Malayalam tech channels, accompanied by an interactive Tableau dashboard.</p>
-            <div style="margin: 15px 0;">
+            <span class="tag-banner" style="color: #e11d48;">PREDICTIVE MODELING & BI</span>
+            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">YouTube View Count Predictor</h3>
+            <p style="color: #475569;">
+                Predictive reach modeling using XGBoost to forecast video audience growth and metrics for regional tech creators, paired with an interactive Tableau analytics dashboard.
+            </p>
+            <div style="margin: 16px 0;">
                 <span class="tech-pill">Python</span>
                 <span class="tech-pill">XGBoost</span>
                 <span class="tech-pill">Flask</span> 
@@ -325,12 +369,14 @@
 
         <!-- Project 4: Demand Forecasting -->
         <div class="project-card">
-            <span style="color: #059669; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">SUPPLY CHAIN ML • TIME SERIES & REGRESSION</span>
-            <h3 style="font-size: 1.8rem; margin: 10px 0;">Demand Forecasting & Inventory Optimization</h3>
-            <p>Engineered a Random Forest Regressor trained on 128,000+ Amazon sales records to automate stock reorder points and optimize monthly warehouse inventory demand planning.</p>
-            <div style="margin: 15px 0;">
+            <span class="tag-banner" style="color: #059669;">SUPPLY CHAIN ML • TIME SERIES REGRESSION</span>
+            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Demand Forecasting & Inventory Optimization</h3>
+            <p style="color: #475569;">
+                Trained a Random Forest Regressor on 128,000+ commercial transactions to automate safety stock thresholds and improve inventory turnover for operations planning.
+            </p>
+            <div style="margin: 16px 0;">
                 <span class="tech-pill">Random Forest</span>
-                <span class="tech-pill">Inventory Optimization</span> 
+                <span class="tech-pill">Inventory Management</span> 
                 <span class="tech-pill">MAPE: 3.45%</span>
                 <span class="tech-pill">Flask API</span>
                 <span class="tech-pill">Pandas</span>
@@ -345,8 +391,10 @@
     <section id="photography" class="section">
         <h2>Cinematic Photography & Design</h2>
         <div class="project-card">
-            <p>Alongside data and software engineering, I specialize in creative color grading, visual compositions, and atmospheric lighting using professional editing suites to produce cinematic visual stories.</p>
-            <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank">Visit My Fiverr Studio 📸</a>
+            <p style="color: #475569; margin-bottom: 20px;">
+                Alongside technical engineering, I produce creative visuals, fine-art color grading, and atmospheric composites using professional editing suites.
+            </p>
+            <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank">Visit My Creative Studio 📸</a>
         </div>
     </section>
 
@@ -354,20 +402,22 @@
         <h2>Core Expertise</h2>
         <div class="skills-grid">
             <div class="skill-item">Financial Auditing & Analysis</div>
-            <div class="skill-item">FastAPI & REST APIs</div>
-            <div class="skill-item">Python (XGBoost / Scikit-Learn)</div>
+            <div class="skill-item">FastAPI & Flask REST APIs</div>
+            <div class="skill-item">Python (Scikit-Learn, XGBoost)</div>
             <div class="skill-item">SQL & Relational Databases</div>
             <div class="skill-item">Power BI & Tableau</div>
-            <div class="skill-item">Conversational NLP Systems</div>
+            <div class="skill-item">Conversational NLP Pipelines</div>
             <div class="skill-item">Inventory & Demand Planning</div>
-            <div class="skill-item">Cinematic Photo Editing</div>
+            <div class="skill-item">Cinematic Visual Design</div>
         </div>
     </section>
 
     <section id="contact" class="section">
         <h2>Let's Connect</h2>
-        <p>Open to discussions regarding <strong>Data Analyst</strong>, <strong>BI Developer</strong>, or <strong>Financial Analyst</strong> roles and collaborative technical projects.</p>
-        <div style="margin-top: 30px;">
+        <p style="color: #475569;">
+            Available for discussions regarding <strong>Data Analyst</strong>, <strong>BI Developer</strong>, or <strong>Financial Analyst</strong> positions and technical collaborations.
+        </p>
+        <div style="margin-top: 25px;">
             <a class="button" href="mailto:arjungopz344@gmail.com">Email Me</a>
             <a class="button" href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" style="background:#0077b5; border-color:#0077b5;">LinkedIn</a>
             <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank" style="background:#24292e; border-color:#24292e;">GitHub</a>
@@ -378,7 +428,7 @@
 </div>
 
 <footer>
-    <p>© 2026 Arjun Gopalakrishnan | Kochi, Kerala</p>
+    <p>© 2026 <strong>Arjun Gopalakrishnan</strong> | Kochi, Kerala</p>
 </footer>
 
 </body>
