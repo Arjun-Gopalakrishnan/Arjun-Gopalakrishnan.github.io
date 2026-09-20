@@ -1,441 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun Gopalakrishnan | Data Analytics, Finance & AI Systems</title>
-    <style>
-        :root {
-            --primary: #3d0052; /* Premier League Purple */
-            --secondary: #00ff87; /* Premier League Green */
-            --dark: #1a1a2e;
-            --text: #333;
-            --light: #f8f9fa;
-            --fiverr: #1dbf73;
-            --accent-blue: #0284c7;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arjun Gopalakrishnan — Data &amp; Financial Analyst, Kochi</title>
+<meta name="description" content="Arjun Gopalakrishnan builds audit-ready data systems: SAP and financial accounting, SQL, Python, Power BI and applied machine learning. Based in Kochi, Kerala.">
+<meta property="og:title" content="Arjun Gopalakrishnan — Data &amp; Financial Analyst">
+<meta property="og:description" content="Finance-trained analyst building forecasting, segmentation and BI systems that hold up to an audit.">
+<meta property="og:image" content="https://arjun-gopalakrishnan.github.io/Arjun_Linkedin_GPT.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --ink:#0C1A24;
+  --ink-2:#11242F;
+  --text:#E7EDEF;
+  --muted:#94A7AF;
+  --rule:rgba(231,237,239,.14);
+  --brass:#D6A64A;
+  --teal:#6FC2B4;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(24px + env(safe-area-inset-top,0px))}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16.5px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+}
 
-        * { box-sizing: border-box; }
+/* ---------- background: ledger grid + quiet glow (no external images) ---------- */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(231,237,239,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(231,237,239,.05) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 55% at 72% 0%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(ellipse 90% 55% at 72% 0%,#000 0%,transparent 78%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(620px 420px at 88% -6%,rgba(214,166,74,.13),transparent 70%),
+    radial-gradient(520px 380px at 2% 42%,rgba(111,194,180,.09),transparent 70%);
+}
+.shell{position:relative;z-index:1}
 
-        body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-            margin: 0;
-            background: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
 
-        header {
-            background: linear-gradient(rgba(26, 26, 46, 0.92), rgba(26, 26, 46, 0.92)), 
-                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
+/* ---------- shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:0 24px}
+@media(min-width:1000px){
+  .shell{display:grid;grid-template-columns:300px 1fr;gap:72px;align-items:start}
+  .rail{position:sticky;top:0;height:100vh;padding:56px 0;display:flex;flex-direction:column;justify-content:space-between}
+}
 
-        header h1 { font-size: 3.2rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
-        header p { font-size: 1.35rem; font-weight: 400; color: var(--secondary); margin-top: 0; }
+/* ---------- rail ---------- */
+.rail{padding:44px 0 8px}
+.mark{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.portrait{
+  width:66px;height:66px;border-radius:50%;object-fit:cover;
+  border:1px solid rgba(214,166,74,.45);background:var(--ink-2);flex:none;
+  box-shadow:0 0 0 4px rgba(214,166,74,.07);
+}
+.portrait-fallback{
+  width:66px;height:66px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:24px;color:var(--brass);
+  background:var(--ink-2);border:1px solid var(--rule);
+}
+.rail h1{font-family:var(--serif);font-weight:400;font-size:1.45rem;line-height:1.2;margin:0;letter-spacing:.2px}
+.rail .role{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.where{color:var(--muted);font-size:.9rem;margin:0 0 26px;max-width:32ch}
+.where b{color:var(--text);font-weight:500}
+nav ul{list-style:none;margin:0 0 28px;padding:0}
+nav li{border-top:1px solid var(--rule)}
+nav li:last-child{border-bottom:1px solid var(--rule)}
+nav a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;color:var(--text);font-size:.95rem}
+nav a:hover{color:var(--brass);text-decoration:none}
+nav a span{color:var(--muted);font-size:.78rem;font-family:var(--serif);font-variant-numeric:tabular-nums}
+.rail-foot{font-size:.82rem;color:var(--muted);line-height:1.6}
+.rail-foot a{color:var(--muted)}
+.rail-foot a:hover{color:var(--teal)}
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--primary);
-            padding: 14px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+/* ---------- main ---------- */
+main{padding:8px 0 96px}
+@media(min-width:1000px){main{padding:96px 0 120px}}
 
-        nav a {
-            color: white;
-            margin: 0 14px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            transition: color 0.25s ease;
-        }
+.hero{position:relative}
+.hero-plot{
+  position:absolute;right:-10px;top:-46px;width:min(420px,58%);height:190px;
+  opacity:.5;pointer-events:none;z-index:-1;
+}
+.lede{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.9rem,4.6vw,3.05rem);
+  line-height:1.16;letter-spacing:-.4px;
+  margin:0 0 26px;max-width:19ch;
+}
+.lede em{font-style:normal;color:var(--brass)}
+.intro{max-width:60ch;color:var(--muted);margin:0 0 18px}
+.intro strong{color:var(--text);font-weight:500}
+.availability{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--rule);border-radius:999px;
+  padding:7px 15px 7px 12px;font-size:.86rem;color:var(--muted);margin-top:10px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex:none}
 
-        nav a:hover { color: var(--secondary); }
+section{padding-top:64px}
+.section-title{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:0 0 4px;color:var(--text)}
+.section-note{color:var(--muted);font-size:.9rem;margin:0 0 26px;max-width:58ch}
 
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+/* ---------- experience ---------- */
+.roles{border-top:1px solid var(--rule)}
+.role-row{padding:20px 0;border-bottom:1px solid var(--rule)}
+.role-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.role-head h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;margin:0;line-height:1.3}
+.role-head h3 small{display:block;font-family:var(--sans);font-size:.88rem;color:var(--brass);font-weight:500;margin-top:2px}
+.dates{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.role-row p{margin:10px 0 0;color:#C3D0D5;max-width:62ch;font-size:.97rem}
 
-        .section h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            border-bottom: 4px solid var(--secondary);
-            display: inline-block;
-            margin-bottom: 35px;
-            padding-bottom: 4px;
-        }
+/* ---------- ledger of work ---------- */
+.entry{padding:26px 0;border-top:1px solid var(--rule)}
+.entry:last-child{border-bottom:1px solid var(--rule)}
+.entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.entry h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;margin:0;letter-spacing:-.2px;flex:1 1 60%;min-width:220px}
+.figure{text-align:right;flex:0 0 auto}
+.figure b{display:block;font-family:var(--serif);font-weight:400;font-size:1.65rem;color:var(--brass);font-variant-numeric:tabular-nums;line-height:1.1}
+.figure span{display:block;font-size:.76rem;color:var(--muted);letter-spacing:.2px}
+.entry p{margin:12px 0 0;max-width:62ch;color:#C3D0D5}
+.stack{font-size:.85rem;color:var(--muted);margin-top:12px!important}
+.links{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.92rem}
+.links a{border-bottom:1px solid transparent;padding-bottom:1px}
+.links a:hover{text-decoration:none;border-bottom-color:var(--teal)}
+.links a.plain{color:var(--muted)}
+.links a.plain:hover{color:var(--text);border-bottom-color:var(--rule)}
+.live{color:var(--teal);font-size:.78rem;display:inline-flex;align-items:center;gap:7px;margin-bottom:8px}
+.caveat{font-size:.8rem;color:var(--muted);margin-top:10px!important;font-style:italic}
 
-        .about-flex {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
+/* ---------- toolkit ---------- */
+.toolkit{border-top:1px solid var(--rule);margin:0}
+.tool-row{display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:10px 28px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.tool-row dt{font-family:var(--serif);font-size:1rem;color:var(--brass);margin:0}
+.tool-row dd{margin:0;color:#C3D0D5;font-size:.95rem}
+@media(max-width:560px){.tool-row{grid-template-columns:1fr;gap:2px}}
 
-        .about-image {
-            flex: 1;
-            min-width: 260px;
-            max-width: 320px;
-        }
+/* ---------- pursuits ---------- */
+.pursuit{padding:24px 0;border-top:1px solid var(--rule)}
+.pursuit:last-of-type{border-bottom:1px solid var(--rule)}
+.pursuit h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:0 0 8px}
+.pursuit p{margin:0;max-width:62ch;color:#C3D0D5}
+.pursuit .links{margin-top:14px}
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            border: 4px solid white;
-            display: block;
-            object-fit: cover;
-            background: #e2e8f0;
-        }
+/* ---------- contact ---------- */
+.contact-line{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.25;margin:0 0 22px;max-width:22ch}
+.contact-grid{display:grid;gap:0;border-top:1px solid var(--rule);max-width:560px}
+.contact-grid a{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--rule);color:var(--text)}
+.contact-grid a:hover{color:var(--brass);text-decoration:none}
+.contact-grid span{color:var(--muted);font-size:.85rem;text-align:right}
+footer{margin-top:64px;color:var(--muted);font-size:.83rem}
 
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .project-card {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
-            border: 1px solid #eef0f3;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .project-card:hover { 
-            transform: translateY(-6px); 
-            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-        }
-
-        .featured-card {
-            border: 2px solid var(--secondary);
-            background: linear-gradient(180deg, #ffffff 0%, #f8fbfa 100%);
-            position: relative;
-        }
-
-        .tag-banner {
-            font-size: 0.78rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            display: inline-block;
-            margin-bottom: 6px;
-        }
-
-        .status-tag {
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 12px;
-            color: #64748b;
-            font-style: italic;
-        }
-
-        .tech-pill {
-            background: #f1f5f9;
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-right: 6px;
-            margin-bottom: 8px;
-            display: inline-block;
-            border: 1px solid #e2e8f0;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 11px 22px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-top: 12px;
-            margin-right: 8px;
-            transition: all 0.25s ease;
-            border: 2px solid var(--primary);
-            font-size: 13.5px;
-        }
-
-        .button:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-
-        .button.alt {
-            background: var(--secondary);
-            border-color: var(--secondary);
-            color: #0d3822;
-        }
-
-        .button.alt:hover {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .button.outline {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .button.outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .button.fiverr-btn {
-            background: var(--fiverr);
-            border-color: var(--fiverr);
-            color: white;
-        }
-
-        .button.fiverr-btn:hover {
-            background: transparent;
-            color: var(--fiverr);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-item {
-            background: white;
-            padding: 22px 18px;
-            border-radius: 16px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #f1f5f9;
-            border-top: 4px solid var(--primary);
-            transition: transform 0.2s ease;
-        }
-
-        .skill-item:hover { transform: translateY(-4px); }
-
-        footer {
-            background: var(--dark);
-            color: #94a3b8;
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 0.9rem;
-        }
-
-        footer strong { color: white; }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.3rem; }
-            header p { font-size: 1.1rem; }
-            .about-image { max-width: 100%; }
-        }
-    </style>
+/* ---------- one page-load reveal ---------- */
+.reveal{opacity:0;transform:translateY(10px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+.reveal:nth-of-type(2){animation-delay:.09s}
+.reveal:nth-of-type(3){animation-delay:.18s}
+.reveal:nth-of-type(4){animation-delay:.27s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{animation:none;opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 
-<header>
-    <h1>Arjun Gopalakrishnan</h1>
-    <p>Financial Analyst ➔ Data Analytics & Applied AI Systems</p>
-</header>
+<div class="shell">
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#projects">Portfolio</a>
-    <a href="#skills">Expertise</a>
-    <a href="#photography">Creative Studio</a>
-    <a href="#contact">Connect</a>
-</nav>
-
-<div class="container">
-
-    <section id="about" class="section">
-        <div class="about-flex">
-            <div class="about-image">
-                <img src="./Arjun_Linkedin_GPT.png" 
-                     alt="Arjun Gopalakrishnan Profile Photo" 
-                     onerror="this.onerror=null; this.src='Arjun_Linkedin_GPT.png';">
-            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 14px;">
-                    I am a <strong>Data & Financial Analyst</strong> based in <strong>Kochi, Kerala</strong>, combining an academic background in Commerce with professional corporate experience in financial accounting, statutory reconciliations, and inventory reporting across ERP platforms (SAP & Tally).
-                </p>
-                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 14px;">
-                    I bridge the gap between finance and modern analytics—translating multi-source transactional data into executive business intelligence using <strong>SQL, Python, Power BI, and interactive machine learning models</strong>. My experience includes optimizing stock reorder thresholds, conducting cohort-level churn audits, and automating operational workflows.
-                </p>
-                <p style="font-size: 1.05rem; color: #475569;">
-                    Focused on building reliable, audit-ready data systems that improve reporting turnaround times, track bottom-line variances, and deliver measurable business value.
-                </p>
-            </div>
+  <!-- ============ left rail ============ -->
+  <aside class="rail">
+    <div>
+      <div class="mark">
+        <img class="portrait"
+             src="https://arjun-gopalakrishnan.github.io/Arjun_Linkedin_GPT.png"
+             alt="Arjun Gopalakrishnan"
+             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'portrait-fallback',textContent:'AG'}))">
+        <div>
+          <h1>Arjun Gopalakrishnan</h1>
+          <p class="role">Data &amp; Financial Analyst</p>
         </div>
+      </div>
+
+      <p class="where">Kochi, Kerala. Finance and accounts trainee at <b>BPCL</b>, building analytics systems alongside it.</p>
+
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Projects<span>05</span></a></li>
+          <li><a href="#toolkit">Toolkit</a></li>
+          <li><a href="#pursuits">Off the clock</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="rail-foot">
+      <a href="mailto:arjungopz344@gmail.com">arjungopz344@gmail.com</a><br>
+      <a href="tel:+918137043482">+91 81370 43482</a><br>
+      <a href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/Arjun-Gopalakrishnan" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </aside>
+
+  <!-- ============ main ============ -->
+  <main>
+
+    <div class="hero">
+      <!-- quiet field-related backdrop: a plotted series over ledger rules -->
+      <svg class="hero-plot" viewBox="0 0 420 190" fill="none" aria-hidden="true" focusable="false">
+        <g stroke="rgba(231,237,239,.10)" stroke-width="1">
+          <line x1="0" y1="34" x2="420" y2="34"/><line x1="0" y1="72" x2="420" y2="72"/>
+          <line x1="0" y1="110" x2="420" y2="110"/><line x1="0" y1="148" x2="420" y2="148"/>
+        </g>
+        <g fill="rgba(111,194,180,.16)">
+          <rect x="24" y="118" width="14" height="30"/><rect x="74" y="98" width="14" height="50"/>
+          <rect x="124" y="106" width="14" height="42"/><rect x="174" y="78" width="14" height="70"/>
+          <rect x="224" y="86" width="14" height="62"/><rect x="274" y="58" width="14" height="90"/>
+          <rect x="324" y="66" width="14" height="82"/><rect x="374" y="40" width="14" height="108"/>
+        </g>
+        <path d="M31 124 L81 104 L131 112 L181 82 L231 92 L281 62 L331 70 L381 44"
+              stroke="rgba(214,166,74,.55)" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="381" cy="44" r="3.5" fill="rgba(214,166,74,.9)"/>
+      </svg>
+
+      <p class="lede reveal">I read a balance sheet and a <em>training log</em> the same way.</p>
+
+      <p class="intro reveal">
+        My day job is accounting: SAP MM transactions, procure-to-pay, stock verification and reconciliation
+        at BPCL, where a number is wrong until it ties back to a source. I bring that same standard to
+        analytics — <strong>SQL, Python, Power BI</strong> and machine learning models that a finance team
+        can defend in a review.
+      </p>
+
+      <p class="intro reveal">
+        Everything below is built end to end: the data cleaning, the model, the API, and the interface
+        someone uses without reading a manual. Most of it is running live right now.
+      </p>
+
+      <p class="availability reveal">
+        <span class="dot" aria-hidden="true"></span>
+        Open to data analyst, BI developer and financial analyst roles
+      </p>
+    </div>
+
+    <!-- ============ experience ============ -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-note">Four years across accounts, procurement and analytics — most of it spent making sure reported numbers match the physical and documentary reality behind them.</p>
+
+      <div class="roles">
+        <div class="role-row">
+          <div class="role-head">
+            <h3>Finance &amp; Accounts Analyst, Trainee<small>Bharat Petroleum Corporation Limited, Kochi</small></h3>
+            <p class="dates">Feb 2026 — present</p>
+          </div>
+          <p>Process and verify SAP MM material transactions, parked documents and procure-to-pay activity. Run physical inventory verification and stock reconciliation feeding financial reporting, and prepare Excel reporting plus procurement documentation including letters of credit and foreign payments.</p>
+        </div>
+
+        <div class="role-row">
+          <div class="role-head">
+            <h3>Data Science &amp; Analytics Intern<small>ICT Academy of Kerala, remote</small></h3>
+            <p class="dates">Oct — Nov 2025</p>
+          </div>
+          <p>Analysed and validated structured datasets, built reports to support business decisions, and developed the retail demand forecasting application listed below.</p>
+        </div>
+
+        <div class="role-row">
+          <div class="role-head">
+            <h3>Accountant<small>Oxygen The Digital Shop, Kochi</small></h3>
+            <p class="dates">Nov 2024 — Feb 2025</p>
+          </div>
+          <p>Maintained accounting records and transactions, ledger reconciliation and documentation, and verified financial data for accuracy and compliance.</p>
+        </div>
+
+        <div class="role-row">
+          <div class="role-head">
+            <h3>Accounts Assistant<small>Aries Group of Companies, Kochi</small></h3>
+            <p class="dates">May 2023 — Aug 2024</p>
+          </div>
+          <p>Bookkeeping, bank and ledger reconciliation, Excel reporting, and audit documentation support.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" class="section">
-        <h2>Featured Systems & Data Projects</h2>
+    <!-- ============ projects ============ -->
+    <section id="work">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-note">Five systems, each with a live link or the repo behind it. The figure on the right is the thing that mattered most in the build.</p>
 
-        <!-- Featured Project: CareFirst AI Assistant -->
-        <div class="project-card featured-card">
-            <span class="tag-banner" style="color: var(--accent-blue);">LIVE PRODUCTION SYSTEM • HEALTHCARE AI</span>
-            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">CareFirst AI Hospital Assistant Platform</h3>
-            <p style="color: #475569;">
-                An intelligent clinical triage and OPD management application deployed on a decoupled cloud infrastructure. Features dual-language (English & Malayalam) conversational routing for emergency casualty protocols, doctor schedules, automated booking confirmations, and an instant fallback rendering engine ensuring 0ms time-to-interactive for visitors.
-            </p>
-            <div style="margin: 16px 0;">
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">SQLAlchemy / SQLite</span>
-                <span class="tech-pill">Bilingual NLP (English / Malayalam)</span>
-                <span class="tech-pill">Tailwind CSS</span>
-                <span class="tech-pill">Decoupled Architecture</span>
-                <span class="tech-pill">GitHub Pages</span>
-                <span class="tech-pill">Render</span>
-            </div>
-            <div>
-                <a class="button alt" href="https://arjun-gopalakrishnan.github.io/ai-hospital-assistant/" target="_blank">Launch Web App 🏥</a>
-                <a class="button outline" href="https://ai-hospital-assistant-vif4.onrender.com/docs" target="_blank">Interactive Swagger Docs 📡</a>
-                <a class="button" href="https://github.com/Arjun-Gopalakrishnan/ai-hospital-assistant" target="_blank">GitHub Repo</a>
-            </div>
+      <article class="entry">
+        <div class="entry-head">
+          <h3>CareFirst AI hospital assistant</h3>
+          <p class="figure"><b>2</b><span>languages served</span></p>
         </div>
-
-        <!-- Project 1: Retail Analytics -->
-        <div class="project-card">
-            <span class="tag-banner" style="color: #0284c7;">RETAIL ANALYTICS & CLUSTERING</span>
-            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Customer Segmentation & Churn Analysis</h3>
-            <p style="color: #475569;">
-                Applied K-Means clustering and RFM (Recency, Frequency, Monetary) analytics on 400,000+ transactional records to categorize high-value, loyal, and at-risk cohorts. Designed targeted retention strategies to reduce customer attrition.
-            </p>
-            <div style="margin: 16px 0;">
-                <span class="tech-pill">Python</span> 
-                <span class="tech-pill">K-Means Clustering</span> 
-                <span class="tech-pill">RFM Analysis</span> 
-                <span class="tech-pill">Scikit-Learn</span>
-                <span class="tech-pill">Pandas / Seaborn</span>
-            </div>
-            <div>
-                <a class="button alt" href="https://github.com/Arjun-Gopalakrishnan/Retail-Customer-Segmentation-RFM" target="_blank">GitHub Repo</a>
-            </div>
-        </div>
-
-        <!-- Project 2: Premier League Valuation -->
-        <div class="project-card">
-            <span class="tag-banner" style="color: var(--primary);">LIVE STREAMLIT APP • SPORTS ANALYTICS</span>
-            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Premier League Elite Valuation Tool</h3>
-            <p style="color: #475569;">
-                An interactive sports analytics engine predicting football player market valuations and auditing scouting ROI using regression techniques on performance statistics.
-            </p>
-            <div style="margin: 16px 0;">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">Scikit-Learn</span> 
-                <span class="tech-pill">Streamlit</span>
-                <span class="tech-pill">Feature Engineering</span>
-                <span class="tech-pill">Sports Analytics</span>
-            </div>
-            <div>
-                <a class="button alt" href="https://premier-league-valuation-app-it2qqnznzqpqhe2m6ressy.streamlit.app/" target="_blank">Launch App 🚀</a>
-            </div>
-            <span class="status-tag">Note: Free cloud instance; waking up from standby takes ~30 seconds.</span>
-        </div>
-
-        <!-- Project 3: YouTube Predictor -->
-        <div class="project-card">
-            <span class="tag-banner" style="color: #e11d48;">PREDICTIVE MODELING & BI</span>
-            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">YouTube View Count Predictor</h3>
-            <p style="color: #475569;">
-                Predictive reach modeling using XGBoost to forecast video audience growth and engagement metrics for regional tech creators, paired with an interactive Tableau analytics dashboard.
-            </p>
-            <div style="margin: 16px 0;">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">XGBoost</span>
-                <span class="tech-pill">Flask</span> 
-                <span class="tech-pill">Tableau</span>
-                <span class="tech-pill">Render</span>
-            </div>
-            <div>
-                <a class="button alt" href="https://youtube-predictor-app-7cp3.onrender.com" target="_blank">Launch App 📺</a>
-                <a class="button" href="https://github.com/Arjun-Gopalakrishnan/Youtube-Predictor-Final" target="_blank">GitHub Repo</a>
-            </div>
-        </div>
-
-        <!-- Project 4: Demand Forecasting -->
-        <div class="project-card">
-            <span class="tag-banner" style="color: #059669;">SUPPLY CHAIN ML • TIME SERIES REGRESSION</span>
-            <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Demand Forecasting & Inventory Optimization</h3>
-            <p style="color: #475569;">
-                Trained a Random Forest Regressor on 128,000+ commercial sales records to automate safety stock thresholds and improve inventory turnover for operations planning.
-            </p>
-            <div style="margin: 16px 0;">
-                <span class="tech-pill">Random Forest</span>
-                <span class="tech-pill">Inventory Management</span> 
-                <span class="tech-pill">MAPE: 3.45%</span>
-                <span class="tech-pill">Flask API</span>
-                <span class="tech-pill">Pandas</span>
-            </div>
-            <div>
-                <a class="button alt" href="https://stockproject-4-tng7.onrender.com/" target="_blank">Launch App 📦</a>
-                <a class="button" href="https://github.com/Arjun-Gopalakrishnan/stockproject" target="_blank">GitHub Repo</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="photography" class="section">
-        <h2>Cinematic Photography & Design</h2>
-        <div class="project-card">
-            <p style="color: #475569; margin-bottom: 20px;">
-                Alongside analytical workflows, I produce creative visual compositions, fine-art color grading, and atmospheric designs using professional digital editing suites.
-            </p>
-            <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank">Visit My Creative Studio 📸</a>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <h2>Core Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Financial Accounting & Auditing</div>
-            <div class="skill-item">Business Intelligence (Power BI / Tableau)</div>
-            <div class="skill-item">Python (Scikit-Learn, XGBoost, Pandas)</div>
-            <div class="skill-item">SQL & Relational Databases</div>
-            <div class="skill-item">ERP Operations (SAP MM & Tally)</div>
-            <div class="skill-item">FastAPI & Flask REST APIs</div>
-            <div class="skill-item">Inventory & Demand Planning</div>
-            <div class="skill-item">Cinematic Visual Design</div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Let's Connect</h2>
-        <p style="color: #475569;">
-            Open to discussions regarding <strong>Data Analyst</strong>, <strong>Business Intelligence Developer</strong>, or <strong>Financial Analyst</strong> positions and technical collaborations.
+        <p class="live"><span class="dot" aria-hidden="true"></span>Live in production</p>
+        <p>
+          A clinical triage and OPD assistant that answers in English and Malayalam — casualty routing,
+          doctor schedules and appointment confirmations. Built on a decoupled FastAPI backend with a
+          fallback renderer so the page is usable the instant it loads, even while the free-tier API wakes up.
         </p>
-        <div style="margin-top: 25px;">
-            <a class="button" href="mailto:arjungopz344@gmail.com">Email Me</a>
-            <a class="button" href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" style="background:#0077b5; border-color:#0077b5;">LinkedIn</a>
-            <a class="button" href="https://github.com/Arjun-Gopalakrishnan" target="_blank" style="background:#24292e; border-color:#24292e;">GitHub</a>
-            <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank">Fiverr Profile</a>
+        <p class="stack">FastAPI, Python, SQLAlchemy, SQLite, bilingual intent routing, Tailwind CSS, Render, GitHub Pages</p>
+        <p class="links">
+          <a href="https://arjun-gopalakrishnan.github.io/ai-hospital-assistant/" target="_blank" rel="noopener">Open the app</a>
+          <a href="https://ai-hospital-assistant-vif4.onrender.com/docs" target="_blank" rel="noopener">API docs</a>
+          <a class="plain" href="https://github.com/Arjun-Gopalakrishnan/ai-hospital-assistant" target="_blank" rel="noopener">Source</a>
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Demand forecasting and stock optimisation</h3>
+          <p class="figure"><b>3.45%</b><span>MAPE on held-out data</span></p>
         </div>
+        <p>
+          Built during the ICT Academy programme: a Random Forest regressor trained on 128,000 retail sales
+          records, wrapped in a Flask API that returns reorder points and safety-stock levels, with a Tableau
+          layer for inventory reporting. Less stockout firefighting, fewer rupees parked in slow-moving
+          stock — the same problem I work on during physical verification at BPCL.
+        </p>
+        <p class="stack">Python, SQL, pandas, NumPy, scikit-learn, Random Forest, Flask, Tableau, Render</p>
+        <p class="links">
+          <a href="https://stockproject-4-tng7.onrender.com/" target="_blank" rel="noopener">Open the app</a>
+          <a class="plain" href="https://github.com/Arjun-Gopalakrishnan/stockproject" target="_blank" rel="noopener">Source</a>
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Customer segmentation and churn analysis</h3>
+          <p class="figure"><b>400,000</b><span>transactions clustered</span></p>
+        </div>
+        <p>
+          RFM scoring and K-Means clustering across a retail transaction log to separate high-value, loyal
+          and at-risk cohorts, then a written read on which group is worth spending retention budget on.
+          The analysis ends with a decision, not a chart.
+        </p>
+        <p class="stack">Python, scikit-learn, K-Means, RFM, pandas, Seaborn</p>
+        <p class="links">
+          <a href="https://github.com/Arjun-Gopalakrishnan/Retail-Customer-Segmentation-RFM" target="_blank" rel="noopener">Read the analysis</a>
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Premier League valuation tool</h3>
+          <p class="figure"><b>Live</b><span>Streamlit app</span></p>
+        </div>
+        <p>
+          A regression model that estimates a player's market value from performance data, so you can see
+          which signings a club overpaid for. Football is where I test ideas I would not risk on a client's
+          data first.
+        </p>
+        <p class="stack">Python, scikit-learn, Streamlit, feature engineering</p>
+        <p class="links">
+          <a href="https://premier-league-valuation-app-it2qqnznzqpqhe2m6ressy.streamlit.app/" target="_blank" rel="noopener">Open the app</a>
+        </p>
+        <p class="caveat">Hosted on a free instance — give it about 30 seconds to wake up.</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>YouTube view count predictor</h3>
+          <p class="figure"><b>XGBoost</b><span>+ Tableau dashboard</span></p>
+        </div>
+        <p>
+          Forecasts reach and engagement for regional tech creators from title, timing and channel signals,
+          with a Tableau layer for the patterns a model score alone does not explain.
+        </p>
+        <p class="stack">Python, XGBoost, Flask, Tableau, Render</p>
+        <p class="links">
+          <a href="https://youtube-predictor-app-7cp3.onrender.com" target="_blank" rel="noopener">Open the app</a>
+          <a class="plain" href="https://github.com/Arjun-Gopalakrishnan/Youtube-Predictor-Final" target="_blank" rel="noopener">Source</a>
+        </p>
+      </article>
     </section>
 
-</div>
+    <!-- ============ toolkit ============ -->
+    <section id="toolkit">
+      <h2 class="section-title">Toolkit</h2>
+      <p class="section-note">What I use daily, and what I reach for when a question outgrows a spreadsheet.</p>
+      <dl class="toolkit">
+        <div class="tool-row"><dt>Finance</dt><dd>Accounts payable, procure-to-pay, financial reconciliation, inventory accounting, purchase order support, financial documentation</dd></div>
+        <div class="tool-row"><dt>ERP</dt><dd>SAP MM, SAP FICO, SAP Business One, Tally ERP</dd></div>
+        <div class="tool-row"><dt>Data</dt><dd>SQL, advanced Excel, pandas, NumPy, data cleaning and validation</dd></div>
+        <div class="tool-row"><dt>Modelling</dt><dd>scikit-learn, XGBoost, Random Forest, K-Means, regression and forecasting</dd></div>
+        <div class="tool-row"><dt>Reporting</dt><dd>Power BI, Tableau, MIS and executive dashboards</dd></div>
+        <div class="tool-row"><dt>Shipping</dt><dd>FastAPI, Flask, Streamlit, Git, Render, GitHub Pages</dd></div>
+        <div class="tool-row"><dt>Credentials</dt><dd>SAP FICO certification, ICT Academy Data Science &amp; Analytics, Deloitte Technology Job Simulation (Forage), B.Com (Co-operation), MG University</dd></div>
+      </dl>
+    </section>
 
-<footer>
-    <p>© 2026 <strong>Arjun Gopalakrishnan</strong> | Kochi, Kerala</p>
-</footer>
+    <!-- ============ pursuits ============ -->
+    <section id="pursuits">
+      <h2 class="section-title">Off the clock</h2>
+      <p class="section-note">Two things I have kept at long enough that they now feed the work.</p>
+
+      <div class="pursuit">
+        <h3>Photography and colour grading</h3>
+        <p>
+          I shoot and grade cinematic stills — the part I enjoy is the same as in analysis: deciding what to
+          keep, what to cut, and what the viewer should notice first. I take paid editing and grading work
+          through Fiverr.
+        </p>
+        <p class="links">
+          <a href="https://www.fiverr.com/arjungopz/" target="_blank" rel="noopener">See the portfolio on Fiverr</a>
+        </p>
+      </div>
+
+      <div class="pursuit">
+        <h3>Football, played and modelled</h3>
+        <p>
+          Squad building in eFootball taught me to argue with my own priors about who is actually worth the
+          budget. The valuation tool above started as a way to settle one of those arguments with data.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ contact ============ -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-line">Happy to walk through any of this in detail.</p>
+      <div class="contact-grid">
+        <a href="mailto:arjungopz344@gmail.com">Email<span>arjungopz344@gmail.com</span></a>
+        <a href="tel:+918137043482">Phone<span>+91 81370 43482</span></a>
+        <a href="https://www.linkedin.com/in/arjun-gopalakrishnan-32278623a/" target="_blank" rel="noopener">LinkedIn<span>arjun-gopalakrishnan</span></a>
+        <a href="https://github.com/Arjun-Gopalakrishnan" target="_blank" rel="noopener">GitHub<span>Arjun-Gopalakrishnan</span></a>
+        <a href="https://www.fiverr.com/arjungopz/" target="_blank" rel="noopener">Fiverr<span>photo editing and grading</span></a>
+        <!-- Put Arjun_Gopalakrishnan-Resume.pdf in the repo root and this link works -->
+        <a href="Arjun_Gopalakrishnan-Resume.pdf" target="_blank" rel="noopener">Résumé<span>PDF</span></a>
+      </div>
+      <footer>© 2026 Arjun Gopalakrishnan — Kochi, Kerala</footer>
+    </section>
+
+  </main>
+</div>
 
 </body>
 </html>
