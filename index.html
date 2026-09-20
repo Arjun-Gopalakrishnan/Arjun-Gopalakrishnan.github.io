@@ -88,11 +88,14 @@
 
         .about-image img {
             width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
             border-radius: 24px;
             box-shadow: 0 12px 30px rgba(0,0,0,0.12);
             border: 4px solid white;
             display: block;
             object-fit: cover;
+            background: #e2e8f0;
         }
 
         .about-text {
@@ -265,18 +268,20 @@
     <section id="about" class="section">
         <div class="about-flex">
             <div class="about-image">
-                <img src="Arjun_Linkedin_GPT.png" alt="Arjun Gopalakrishnan Profile Photo">
+                <img src="./Arjun_Linkedin_GPT.png" 
+                     alt="Arjun Gopalakrishnan Profile Photo" 
+                     onerror="this.onerror=null; this.src='Arjun_Linkedin_GPT.png';">
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
-                <p style="font-size: 1.05rem; color: #475569;">
-                    I am a <strong>Data & Financial Analyst</strong> based in <strong>Kochi, Kerala</strong>, with an academic foundation in Commerce and professional experience across corporate accounting, financial reconciliations, and inventory reporting.
+                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 14px;">
+                    I am a <strong>Data & Financial Analyst</strong> based in <strong>Kochi, Kerala</strong>, combining an academic background in Commerce with professional corporate experience in financial accounting, statutory reconciliations, and inventory reporting across ERP platforms (SAP & Tally).
+                </p>
+                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 14px;">
+                    I bridge the gap between finance and modern analytics—translating multi-source transactional data into executive business intelligence using <strong>SQL, Python, Power BI, and interactive machine learning models</strong>. My experience includes optimizing stock reorder thresholds, conducting cohort-level churn audits, and automating operational workflows.
                 </p>
                 <p style="font-size: 1.05rem; color: #475569;">
-                    I specialize in translating transactional records into clear, actionable business intelligence—developing <strong>interactive dashboards (Power BI / Tableau)</strong>, automated operational reporting pipelines, and applied Machine Learning models for demand and churn forecasting.
-                </p>
-                <p style="font-size: 1.05rem; color: #475569;">
-                    My focus centers on combining core financial literacy with modern data stacks to build reliable analytics solutions that streamline workflows, identify variances, and support executive decision-making.
+                    Focused on building reliable, audit-ready data systems that improve reporting turnaround times, track bottom-line variances, and deliver measurable business value.
                 </p>
             </div>
         </div>
@@ -290,7 +295,7 @@
             <span class="tag-banner" style="color: var(--accent-blue);">LIVE PRODUCTION SYSTEM • HEALTHCARE AI</span>
             <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">CareFirst AI Hospital Assistant Platform</h3>
             <p style="color: #475569;">
-                An intelligent clinical triage and OPD management application deployed on a decoupled cloud infrastructure. Features dual-language (English & Malayalam) conversational routing for emergency protocols, doctor schedules, automated booking confirmation, and an instant-load fallback rendering engine ensuring 0ms time-to-interactive for public users.
+                An intelligent clinical triage and OPD management application deployed on a decoupled cloud infrastructure. Features dual-language (English & Malayalam) conversational routing for emergency casualty protocols, doctor schedules, automated booking confirmations, and an instant fallback rendering engine ensuring 0ms time-to-interactive for visitors.
             </p>
             <div style="margin: 16px 0;">
                 <span class="tech-pill">FastAPI</span>
@@ -353,7 +358,7 @@
             <span class="tag-banner" style="color: #e11d48;">PREDICTIVE MODELING & BI</span>
             <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">YouTube View Count Predictor</h3>
             <p style="color: #475569;">
-                Predictive reach modeling using XGBoost to forecast video audience growth and metrics for regional tech creators, paired with an interactive Tableau analytics dashboard.
+                Predictive reach modeling using XGBoost to forecast video audience growth and engagement metrics for regional tech creators, paired with an interactive Tableau analytics dashboard.
             </p>
             <div style="margin: 16px 0;">
                 <span class="tech-pill">Python</span>
@@ -373,7 +378,7 @@
             <span class="tag-banner" style="color: #059669;">SUPPLY CHAIN ML • TIME SERIES REGRESSION</span>
             <h3 style="font-size: 1.8rem; margin: 8px 0 12px 0;">Demand Forecasting & Inventory Optimization</h3>
             <p style="color: #475569;">
-                Trained a Random Forest Regressor on 128,000+ commercial transactions to automate safety stock thresholds and improve inventory turnover for operations planning.
+                Trained a Random Forest Regressor on 128,000+ commercial sales records to automate safety stock thresholds and improve inventory turnover for operations planning.
             </p>
             <div style="margin: 16px 0;">
                 <span class="tech-pill">Random Forest</span>
@@ -393,7 +398,7 @@
         <h2>Cinematic Photography & Design</h2>
         <div class="project-card">
             <p style="color: #475569; margin-bottom: 20px;">
-                Alongside analytics and data workflows, I produce creative visuals, fine-art color grading, and atmospheric composites using professional editing suites.
+                Alongside analytical workflows, I produce creative visual compositions, fine-art color grading, and atmospheric designs using professional digital editing suites.
             </p>
             <a class="button fiverr-btn" href="https://www.fiverr.com/arjungopz/" target="_blank">Visit My Creative Studio 📸</a>
         </div>
@@ -406,9 +411,9 @@
             <div class="skill-item">Business Intelligence (Power BI / Tableau)</div>
             <div class="skill-item">Python (Scikit-Learn, XGBoost, Pandas)</div>
             <div class="skill-item">SQL & Relational Databases</div>
+            <div class="skill-item">ERP Operations (SAP MM & Tally)</div>
             <div class="skill-item">FastAPI & Flask REST APIs</div>
-            <div class="skill-item">Conversational NLP Systems</div>
-            <div class="skill-item">Inventory & Variance Analysis</div>
+            <div class="skill-item">Inventory & Demand Planning</div>
             <div class="skill-item">Cinematic Visual Design</div>
         </div>
     </section>
@@ -416,7 +421,7 @@
     <section id="contact" class="section">
         <h2>Let's Connect</h2>
         <p style="color: #475569;">
-            Available for discussions regarding <strong>Data Analyst</strong>, <strong>BI Developer</strong>, or <strong>Financial Analyst</strong> positions and technical collaborations.
+            Open to discussions regarding <strong>Data Analyst</strong>, <strong>Business Intelligence Developer</strong>, or <strong>Financial Analyst</strong> positions and technical collaborations.
         </p>
         <div style="margin-top: 25px;">
             <a class="button" href="mailto:arjungopz344@gmail.com">Email Me</a>
